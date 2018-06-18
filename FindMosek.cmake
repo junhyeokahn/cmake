@@ -23,10 +23,8 @@ find_library(FUSION_LIBRARY
 
 include(FindPackageHandleStandardArgs)
 
-if (MOSEK_FOUND)
-    set(MOSEK_INCLUDE_DIRS "${MOSEK_INCLUDE_DIR}")
-    set(MOSEK_LIBRARIES "${MOSEK_LIBRARIES};${FUSION_LIBRARIES}")
-endif()
+set(MOSEK_INCLUDE_DIRS "${MOSEK_INCLUDE_DIR}")
+set(MOSEK_LIBRARIES "${MOSEK_LIBRARY};${FUSION_LIBRARY}")
 
 mark_as_advanced(MOSEK_HOME
                  MOSEK_INCLUDE_DIR

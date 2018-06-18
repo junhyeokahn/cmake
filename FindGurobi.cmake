@@ -34,12 +34,8 @@ find_library(GUROBI_CXX_LIBRARY
 
 include(FindPackageHandleStandardArgs)
 
-if (GUROBI_FOUND)
-    set(GUROBI_INCLUDE_DIRS "${GUROBI_INCLUDE_DIR}" )
-    set(GUROBI_LIBRARIES "${GUROBI_LIBRARY};${GUROBI_CXX_LIBRARY}" )
-endif()
+set(GUROBI_INCLUDE_DIRS "${GUROBI_INCLUDE_DIR}" )
+set(GUROBI_LIBRARIES "${GUROBI_LIBRARY};${GUROBI_CXX_LIBRARY}" )
 
-mark_as_advanced(GUROBI_HOME
-                 GUROBI_INCLUDE_DIR
-                 GUROBI_LIBRARY
-                 GUROBI_CXX_LIBRARY)
+mark_as_advanced(GUROBI_INCLUDE_DIRS
+                 GUROBI_LIBRARIES)
