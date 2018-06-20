@@ -30,4 +30,6 @@ mark_as_advanced(MOSEK_HOME
                  MOSEK_INCLUDE_DIR
                  MOSEK_LIBRARY
                  FUSION_LIBRARY
+                 MOSEK_INCLUDE_DIRS
+                 MOSEK_LIBRARIES
                  )
