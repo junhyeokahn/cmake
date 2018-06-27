@@ -34,8 +34,17 @@ find_library(GUROBI_CXX_LIBRARY
 
 include(FindPackageHandleStandardArgs)
 
-set(GUROBI_INCLUDE_DIRS "${GUROBI_INCLUDE_DIR}" )
-set(GUROBI_LIBRARIES "${GUROBI_LIBRARY};${GUROBI_CXX_LIBRARY}" )
+if(GUROBI_INCLUDE_DIR)
+    set(GUROBI_INCLUDE_DIRS "${GUROBI_INCLUDE_DIR}" )
+    set(GUROBI_LIBRARIES "${GUROBI_LIBRARY};${GUROBI_CXX_LIBRARY}" )
+    set(GUROBI_FOUND TRUE)
+    message("-- Found Gurobi: TRUE")
+else
+    message("-- Found Gurobi: FALSE, Build without Gurobi")
+endif()
 
-mark_as_advanced(GUROBI_INCLUDE_DIRS
-                 GUROBI_LIBRARIES)
+mark_as_advanced(GUROBI_HOME
+                 GUROBI_INCLUDE_DIR
+                 GUROBI_LIBRARY
+                 GUROBI_CXX_LIBRARY
+                 )

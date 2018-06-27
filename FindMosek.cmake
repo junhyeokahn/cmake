@@ -23,13 +23,17 @@ find_library(FUSION_LIBRARY
 
 include(FindPackageHandleStandardArgs)
 
-set(MOSEK_INCLUDE_DIRS "${MOSEK_INCLUDE_DIR}")
-set(MOSEK_LIBRARIES "${MOSEK_LIBRARY};${FUSION_LIBRARY}")
+if(MOSEK_INCLUDE_DIR)
+    set(MOSEK_INCLUDE_DIRS "${MOSEK_INCLUDE_DIR}")
+    set(MOSEK_LIBRARIES "${MOSEK_LIBRARY};${FUSION_LIBRARY}")
+    set(MOSEK_FOUND TRUE)
+    message("-- Found Mosek: TRUE")
+else
+    message("-- Found Mosek: FALSE, Build without Mosek")
+endif()
 
 mark_as_advanced(MOSEK_HOME
                  MOSEK_INCLUDE_DIR
                  MOSEK_LIBRARY
                  FUSION_LIBRARY
-                 MOSEK_INCLUDE_DIRS
-                 MOSEK_LIBRARIES
                  )
