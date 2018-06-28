@@ -28,7 +28,7 @@ if(MOSEK_INCLUDE_DIR)
     set(MOSEK_LIBRARIES "${MOSEK_LIBRARY};${FUSION_LIBRARY}")
     set(MOSEK_FOUND TRUE)
     message("-- Found Mosek: TRUE")
-else
+else()
     message("-- Found Mosek: FALSE, Build without Mosek")
 endif()
 

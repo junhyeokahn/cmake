@@ -39,7 +39,7 @@ if(GUROBI_INCLUDE_DIR)
     set(GUROBI_LIBRARIES "${GUROBI_LIBRARY};${GUROBI_CXX_LIBRARY}" )
     set(GUROBI_FOUND TRUE)
     message("-- Found Gurobi: TRUE")
-else
+else()
     message("-- Found Gurobi: FALSE, Build without Gurobi")
 endif()
 
