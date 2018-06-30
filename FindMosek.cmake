@@ -16,16 +16,28 @@ find_library(MOSEK_LIBRARY
              PATHS "${MOSEK_HOME}/bin"
              )
 
+find_library(MOSEK_LIBRARY_EXTENSION
+             NAMES mosek64.8.1
+             PATHS "${MOSEK_HOME}/bin"
+             )
+
 find_library(FUSION_LIBRARY
              NAMES fusion64
+                   fusion64.8.1
              PATHS "${MOSEK_HOME/bin}"
              )
+
+find_library(FUSION_LIBRARY_EXTENSION
+             NAMES fusion64.8.1
+             PATHS "${MOSEK_HOME/bin}"
+             )
+
 
 include(FindPackageHandleStandardArgs)
 
 if(MOSEK_INCLUDE_DIR)
     set(MOSEK_INCLUDE_DIRS "${MOSEK_INCLUDE_DIR}")
-    set(MOSEK_LIBRARIES "${MOSEK_LIBRARY};${FUSION_LIBRARY}")
+    set(MOSEK_LIBRARIES "${MOSEK_LIBRARY};${MOSEK_LIBRARY_EXTENSION};${FUSION_LIBRARY};${FUSION_LIBRARY_EXTENSION}")
     set(MOSEK_FOUND TRUE)
     message("-- Found Mosek: TRUE")
 else()
