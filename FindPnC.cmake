@@ -20,9 +20,9 @@ if(PNC_INCLUDE_DIR)
     set(PNC_INCLUDE_DIRS "${PNC_INCLUDE_DIR}" )
     set(PNC_LIBRARIES "${PNC_LIBRARY}" )
     set(PNC_FOUND TRUE)
-    message("-- Found Gurobi: TRUE")
+    message("-- Found PnC: TRUE")
 else()
-    message("-- Found Gurobi: FALSE, Build without Gurobi")
+    message("-- Found PnC: FALSE, Build without PnC")
 endif()
 
 mark_as_advanced( PNC_INCLUDE_DIR
