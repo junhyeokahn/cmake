@@ -52,6 +52,10 @@ if(NOT CMAKE_FIND_ANACONDA_PYTHON_INCLUDED)
       message("_e = ${_e}")
     endif()
 
+    if(_e)
+        set (_o = ${_e})
+    endif()
+
     string (REGEX MATCH "Python ([0-9]+)[.]([0-9]+)[.]([0-9]+)" _py_version_found "${_o}")
     #message("_py_version_found = ${_py_version_found}")
     #message("CMAKE_MATCH_0 = ${CMAKE_MATCH_0}")
@@ -59,7 +63,6 @@ if(NOT CMAKE_FIND_ANACONDA_PYTHON_INCLUDED)
     set( _py_version_minor ${CMAKE_MATCH_2} )
     set( _py_version_patch ${CMAKE_MATCH_3} )
     set( ANACONDA_PYTHON_VERSION ${_py_version_major}.${_py_version_minor} )
-
 
     if( ${_py_version_major} MATCHES 2 )
       set( _py_ext "")
