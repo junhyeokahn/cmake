@@ -31,7 +31,7 @@ if(NOT CMAKE_FIND_ANACONDA_PYTHON_INCLUDED)
 
   if(ANACONDA_PYTHON_FOUND)
     set( ANACONDA_PYTHON_DIR ${_o} )
-    message( "Found anaconda root directory ${ANACONDA_PYTHON_DIR}" )
+    message( "-- Found anaconda root directory ${ANACONDA_PYTHON_DIR}" )
 
     # find python version
     #
@@ -74,12 +74,12 @@ if(NOT CMAKE_FIND_ANACONDA_PYTHON_INCLUDED)
 
     if( NOT DEFINED ENV{CONDA_DEFAULT_ENV} )
       set( env_CONDA_DEFAULT_ENV "root" )
-      message( "Could not find anaconda environment setting; using default root" )
+      message( "-- Could not find anaconda environment setting; using default root" )
     else()
       set( env_CONDA_DEFAULT_ENV $ENV{CONDA_DEFAULT_ENV} )
     endif()
 
-    message( "Using anaconda ${env_CONDA_DEFAULT_ENV} environment" )
+    message( "-- Using anaconda ${env_CONDA_DEFAULT_ENV} environment" )
     if( env_CONDA_DEFAULT_ENV STREQUAL "root" )
       set(PYTHON_INCLUDE_DIR "${ANACONDA_PYTHON_DIR}/include/${_py_id}" CACHE INTERNAL "")
       set(PYTHON_LIBRARY "${ANACONDA_PYTHON_DIR}/lib/lib${_py_id}${CMAKE_SHARED_LIBRARY_SUFFIX}" CACHE INTERNAL "")
@@ -101,7 +101,7 @@ if(NOT CMAKE_FIND_ANACONDA_PYTHON_INCLUDED)
     FindPythonLibs()
   endif()
 
-  message( "PYTHON_INCLUDE_DIR = ${PYTHON_INCLUDE_DIR}")
-  message( "PYTHON_LIBRARY = ${PYTHON_LIBRARY}")
-  message( "PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
+  message( "-- PYTHON_INCLUDE_DIR = ${PYTHON_INCLUDE_DIR}")
+  message( "-- PYTHON_LIBRARY = ${PYTHON_LIBRARY}")
+  message( "-- PYTHON_EXECUTABLE = ${PYTHON_EXECUTABLE}")
 endif()
