@@ -21,7 +21,7 @@ include(FindPackageHandleStandardArgs)
 
 if(PNC_INCLUDE_DIR)
     set(PNC_INCLUDE_DIRS "${PNC_INCLUDE_DIR}" )
-    set(PNC_LIBRARIES "${FIXED_DRACO_PNC_LIBRARY};${DRACO_PNC_LIBRARY};${PNC_UTILS_LIBRARY}" )
+    set(PNC_LIBRARIES "${DRACO_PNC_LIBRARY};${PNC_UTILS_LIBRARY}" )
     set(PNC_FOUND TRUE)
     message("-- Found PnC: TRUE")
 else()
@@ -29,6 +29,5 @@ else()
 endif()
 
 mark_as_advanced( PNC_INCLUDE_DIR
-                  FIXED_DRACO_PNC_LIBRARY
                   DRACO_PNC_LIBRARY
                   PNC_UTILS_LIBRARY )
