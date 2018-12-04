@@ -12,10 +12,6 @@ find_library(PNC_UTILS_LIBRARY
              NAMES myUtils
              PATHS "/usr/local/lib"
              )
-find_library(FIXED_DRACO_PNC_LIBRARY
-             NAMES FixedDracoPnC
-             PATHS "/usr/local/lib"
-             )
 find_library(DRACO_PNC_LIBRARY
              NAMES DracoPnC
              PATHS "/usr/local/lib"
