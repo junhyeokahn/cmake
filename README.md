@@ -1,2 +1,2 @@
-Shared CMake submodule
-======================
+Shared CMake Modules
+====================
